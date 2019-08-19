@@ -1,0 +1,195 @@
+{
+	"categories": [
+		"misc",
+		"electronics",
+		"apparel",
+		"movies",
+		"living things",
+		"kitchen",
+		"musical instruments"
+	],
+
+	"products": [
+		{
+			"id": 1,
+			"name": "old snow globe",
+			"price": 11.0,
+			"category": "misc",
+			"rating": 2,
+			"inStock": true,
+			"popularity": 37,
+			"description": "immortalize your loved ones in this picture snow globe. whose kids are those? i have no idea, i could never figure out how to open this stupid thing.",
+			"imageSrc": "./images/snowglobe.jpg"
+		},
+		{
+			"id": 2,
+			"name": "foam roller",
+			"price": 14.5,
+			"category": "misc",
+			"rating": 4,
+			"inStock": true,
+			"popularity": 12,
+			"description": "get rid of that ouchie muscle pain after your workouts. it only hurts a lot."
+		},
+		{
+			"id": 3,
+			"name": "hario v60",
+			"price": 20.5,
+			"category": "misc",
+			"rating": 4,
+			"inStock": true,
+			"popularity": 7,
+			"description": "try brewing with this thing. i dare you."
+		},
+		{
+			"id": 4,
+			"name": "worst headphones ever made",
+			"price": 0,
+			"category": "electronics",
+			"rating": 0,
+			"inStock": true,
+			"popularity": 0,
+			"description": "prank your friends in need with these awful, awful headphones. i mean seriously, how do you make headphones that sound worse than am radio? they're soooo bad. please, just take them."
+		},
+		{
+			"id": 5,
+			"name": "canon t3i",
+			"price": 100.0,
+			"category": "electronics",
+			"rating": 4,
+			"inStock": true,
+			"popularity": 8,
+			"description": "somewhat old, but it takes better portraits than an iphone. (portrait lens not included)"
+		},
+		{
+			"id": 6,
+			"name": "friends t-shirt",
+			"price": 7,
+			"category": "apparel",
+			"rating": 5,
+			"inStock": false,
+			"popularity": 19,
+			"description": "could this BE any more of a shirt?"
+		},
+		{
+			"id": 7,
+			"name": "used socks",
+			"price": 4,
+			"category": "apparel",
+			"rating": 2,
+			"inStock": true,
+			"popularity": 1,
+			"description": "i used them for keeping my feet warm. that's it."
+		},
+		{
+			"id": 8,
+			"name": "yellow beanie",
+			"price": 5.5,
+			"category": "apparel",
+			"rating": 5,
+			"inStock": true,
+			"popularity": 10,
+			"description": "don't be a meanie and just get this beanie. if you don't buy it, i'll hit you with zucchini."
+		},
+		{
+			"id": 9,
+			"name": "full-frame star wars box set",
+			"price": 6.5,
+			"category": "movies",
+			"rating": 1,
+			"inStock": true,
+			"popularity": 14,
+			"description": "bust out your old crt for these movies that'll make you say 'wow i can't believe i paid money for these.'"
+		},
+		{
+			"id": 10,
+			"name": "some bollywood movie",
+			"price": 1.5,
+			"category": "movies",
+			"rating": 5,
+			"inStock": true,
+			"popularity": 3,
+			"description": "an instant classic. perfect for those afternoons when you have over three hours to kill."
+		},
+		{
+			"id": 11,
+			"name": "succulent",
+			"price": 7.5,
+			"category": "living things",
+			"rating": 5,
+			"inStock": false,
+			"popularity": 10,
+			"description": "add some greenery to your scenery every millennial's favorite plant. maybe this one won't die on you."
+		},
+		{
+			"id": 12,
+			"name": "beheaded basil plant",
+			"price": 0.5,
+			"category": "living things",
+			"rating": 1,
+			"inStock": true,
+			"popularity": 1,
+			"description": "this really took my spaghetti to the next level. there should be some flavor left in the stems. no promises."
+		},
+		{
+			"id": 13,
+			"name": "broom",
+			"price": 3,
+			"category": "kitchen",
+			"rating": 3,
+			"inStock": true,
+			"popularity": 4,
+			"description": "it's a broom."
+		},
+		{
+			"id": 14,
+			"name": "swiffer",
+			"price": 10.5,
+			"category": "kitchen",
+			"rating": 2,
+			"inStock": true,
+			"popularity": 2,
+			"description": "sometimes it picks things up with the vacuum. sometimes."
+		},
+		{
+			"id": 15,
+			"name": "dust pan",
+			"price": 2,
+			"category": "kitchen",
+			"rating": 3,
+			"inStock": true,
+			"popularity": 6,
+			"description": "brush stuff into it with your hands. doubles as a shovel."
+		},
+		{
+			"id": 16,
+			"name": "prs guitar",
+			"price": 700,
+			"category": "musical instruments",
+			"rating": 5,
+			"inStock": true,
+			"popularity": 6,
+			"description": "it'll dive-bomb harder than my music career!"
+		},
+		{
+			"id": 17,
+			"name": "ibanez bass",
+			"price": 350,
+			"category": "musical instruments",
+			"rating": 4,
+			"inStock": false,
+			"popularity": 9,
+			"description": "if you slappa da bass, then you'll lova this.. bass.."
+		},
+		{
+			"id": 18,
+			"name": "korg grand piano",
+			"price": 200,
+			"category": "musical instruments",
+			"rating": 4,
+			"inStock": true,
+			"popularity": 11,
+			"description": "you can impress all of your aunties and uncles with this. just start one of the pre-programmed songs and wiggle your fingers over the keys. works every time."
+		}
+	]
+}
