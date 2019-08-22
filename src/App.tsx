@@ -2,7 +2,6 @@ import React from 'react';
 
 import Typography from '@material-ui/core/Typography';
 import { TweenLite } from 'gsap';
-import { KeyboardArrowUpOutlined } from '@material-ui/icons';
 import ExpandedProductCard from './components/expandedProductCard/ExpandedProductCard';
 import { Container } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
