@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/yard-sale/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/yard-sale/static/js/main.5fe75329.chunk.js",
+    "main.js.map": "/yard-sale/static/js/main.5fe75329.chunk.js.map",
+    "runtime~main.js": "/yard-sale/static/js/runtime~main.8f5f5653.js",
+    "runtime~main.js.map": "/yard-sale/static/js/runtime~main.8f5f5653.js.map",
+    "static/js/2.70f43ba6.chunk.js": "/yard-sale/static/js/2.70f43ba6.chunk.js",
+    "static/js/2.70f43ba6.chunk.js.map": "/yard-sale/static/js/2.70f43ba6.chunk.js.map",
+    "index.html": "/yard-sale/index.html",
+    "precache-manifest.717fa91cc5b248ff53e7d54899870397.js": "/yard-sale/precache-manifest.717fa91cc5b248ff53e7d54899870397.js",
+    "service-worker.js": "/yard-sale/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/yard-sale/static/css/main.5ecd60fb.chunk.css.map"
+  }
+}
