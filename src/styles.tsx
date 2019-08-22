@@ -27,14 +27,6 @@ export default (theme: Theme) =>
     pulloverEnter: {
       cursor: 'pointer'
     },
-    upArrow: {
-      position: 'absolute',
-      cursor: 'pointer',
-      height: '2em',
-      width: '2em',
-      bottom: 48,
-      left: '45vw'
-    },
     pulloverProduct: {
       width: '100%',
       height: '100%'

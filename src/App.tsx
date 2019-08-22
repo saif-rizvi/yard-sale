@@ -111,8 +111,10 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
           }
           {selectedProductId > 0 &&
           <div className={classes.pulloverProduct}>
-            <ExpandedProductCard product={filteredProducts.filter(p => p.id === selectedProductId)[0]}/>
-            <KeyboardArrowUpOutlined className={classes.upArrow} onClick={this.pullUpPullover} />
+            <ExpandedProductCard
+              product={filteredProducts.filter(p => p.id === selectedProductId)[0]}
+              closePulloverCallback={this.pullUpPullover}
+            />
           </div>
           }
         </div>

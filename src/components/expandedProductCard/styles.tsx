@@ -25,5 +25,10 @@ export default (theme: Theme) =>
       [theme.breakpoints.down('lg')]: {
         width: '100%',
       },
-    }
+    },
+    upArrow: {
+      cursor: 'pointer',
+      height: '1.5em',
+      width: '1.5em',
+    },
 });

@@ -9,14 +9,16 @@ import { WithStyles } from '@material-ui/core';
 
 import withStyles from '@material-ui/core/styles/withStyles';
 import styles from './styles';
+import { KeyboardArrowUpOutlined } from '@material-ui/icons';
 
 type Props = {
   product: Product,
+  closePulloverCallback: () => void
 } & WithStyles<typeof styles>
 
 class ExpandedProductCard extends React.Component<Props> {
   render = () => {
-    const {classes, product} = this.props;
+    const {classes, product, closePulloverCallback} = this.props;
 
     return (
       <div className={classes.wrapper}>
@@ -28,9 +30,12 @@ class ExpandedProductCard extends React.Component<Props> {
             image={process.env.PUBLIC_URL + product.imageSrc}
           />
           <CardContent>
-            <Typography variant="h6">
-              {product.name}
-            </Typography>
+            <Grid container direction="row" justify="space-between" alignItems="center">
+              <Typography variant="h6">
+                {product.name}
+              </Typography>
+              <KeyboardArrowUpOutlined className={classes.upArrow} onClick={closePulloverCallback} />
+            </Grid>
             <Grid container direction="row" justify="space-between" alignItems="center">
               <Typography variant="body1">
                 {"$" + String(product.price)}
@@ -49,6 +54,10 @@ class ExpandedProductCard extends React.Component<Props> {
         </Card>
       </div>
     )
+  };
+
+  private handlePulloverClose = () => {
+
   };
 
   private ratingToStars = (rating: number) => {
