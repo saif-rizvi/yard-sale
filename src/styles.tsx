@@ -21,20 +21,13 @@ export default (theme: Theme) =>
       background: 'white'
     },
     pulloverTitleGrid: {
-      margin: '20vw auto',
+      margin: '10vw auto',
       width: '50vw'
     },
-    pulloverTitle: {
-      // position: 'absolute',
-      // top: '20vh',
-      // left: '20vw'
+    pulloverEnter: {
+      cursor: 'pointer'
     },
-    pulloverSubtitle: {
-      // position: 'absolute',
-      // top: '60vh',
-      // left: '10vw'
-    },
-    downArrow: {
+    upArrow: {
       position: 'absolute',
       cursor: 'pointer',
       height: '2em',

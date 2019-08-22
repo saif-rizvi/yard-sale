@@ -2,7 +2,7 @@ import React from 'react';
 
 import Typography from '@material-ui/core/Typography';
 import { TweenLite } from 'gsap';
-import { KeyboardArrowDown } from '@material-ui/icons';
+import { KeyboardArrowUpOutlined } from '@material-ui/icons';
 import ExpandedProductCard from './components/expandedProductCard/ExpandedProductCard';
 import { Container } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
@@ -11,6 +11,8 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 import styles from './styles';
 import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
@@ -44,6 +46,7 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
   private pulloverRef: HTMLElement | null = null;
   private pulloverTitleRef: HTMLElement | null = null;
   private pulloverSubtitleRef: HTMLElement | null = null;
+  private pulloverEnterRef: HTMLElement | null = null;
   private tween: ReturnType<typeof TweenLite.to> | null = null;
 
   private setPulloverRef = (element: HTMLElement | null) => {
@@ -58,6 +61,32 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
     this.pulloverSubtitleRef = element;
   };
 
+  private setPulloverEnterRef = (element: HTMLElement) => {
+    this.pulloverEnterRef = element;
+  };
+
+  componentDidMount = () => {
+    window.scrollTo({top: 0});
+
+    if (this.pulloverRef) {
+      disableBodyScroll(this.pulloverRef);
+    }
+
+    this.tween = TweenLite.from(
+      this.pulloverTitleRef, 1.2,
+      {y: 40, autoAlpha: 0}
+    );
+    this.tween = TweenLite.from(
+      this.pulloverSubtitleRef, 1.7,
+      {x: 60, autoAlpha: 0}
+    );
+
+    this.tween = TweenLite.from(
+      this.pulloverEnterRef, 2,
+      {x: -60, autoAlpha: 0}
+    );
+  };
+
   render = () => {
     const {classes} = this.props;
     const {filteredProducts, categories, categoryFilter, sortBy, selectedProductId} = this.state;
@@ -66,24 +95,29 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
       <div className={classes.page}>
         <div className={classes.pullover} ref={this.setPulloverRef}>
           {!selectedProductId &&
+          <>
             <Grid direction='column' className={classes.pulloverTitleGrid}>
-              <Typography className={classes.pulloverTitle} variant='h1' ref={this.setPulloverTitleRef}>
+              <Typography variant='h1' ref={this.setPulloverTitleRef}>
                 yard sale.
               </Typography>
-              <Typography className={classes.pulloverSubtitle} variant='h4' ref={this.setPulloverSubtitleRef}>
+              <Typography variant='h4' ref={this.setPulloverSubtitleRef}>
                 please. buy my stuff.
               </Typography>
+              <Typography className={classes.pulloverEnter} variant='body1' color='primary' onClick={this.pullUpPullover} ref={this.setPulloverEnterRef}>
+                come on over.
+              </Typography>
             </Grid>
+          </>
           }
           {selectedProductId > 0 &&
-            <div className={classes.pulloverProduct}>
-              <ExpandedProductCard product={filteredProducts.filter(p => p.id === selectedProductId)[0]} />
-            </div>
+          <div className={classes.pulloverProduct}>
+            <ExpandedProductCard product={filteredProducts.filter(p => p.id === selectedProductId)[0]}/>
+            <KeyboardArrowUpOutlined className={classes.upArrow} onClick={this.pullUpPullover} />
+          </div>
           }
-          <KeyboardArrowDown className={classes.downArrow} onClick={this.pullUpPullover} />
         </div>
         <Container className={classes.container} maxWidth={'xl'}>
-          <TitleBar squished={false} />
+          <TitleBar squished={false}/>
           <Grid container className={classes.toolbar} justify="flex-end" alignItems="flex-end">
             <Button onClick={this.handleReset} disabled={!(sortBy || categoryFilter)}>reset</Button>
             <div>
@@ -121,25 +155,16 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
               </FormControl>
             </div>
           </Grid>
-          <ProductGrid products={filteredProducts} modalCallback={this.openPullover}/>
+          <ProductGrid products={filteredProducts} modalCallback={this.openPullover} />
         </Container>
       </div>
     );
   };
 
-  componentDidMount = () => {
-    window.scrollTo({top: 0});
-    this.tween = TweenLite.from(
-      this.pulloverTitleRef, 1.2,
-      {y: 40, autoAlpha: 0}
-    );
-    this.tween = TweenLite.from(
-      this.pulloverSubtitleRef, 1.7,
-      {x: 60, autoAlpha: 0}
-    );
-  };
-
   private pullUpPullover = () => {
+    if (this.pulloverRef) {
+      enableBodyScroll(this.pulloverRef);
+    }
     this.tween = TweenLite.to(
       this.pulloverRef, 0.5,
       {y: window.scrollY - window.screen.height, display: 'none'}
@@ -147,6 +172,10 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
   };
 
   private pullDownPullover = () => {
+    if (this.pulloverRef) {
+      disableBodyScroll(this.pulloverRef);
+    }
+
     this.tween = TweenLite.fromTo(
       this.pulloverRef,
       0.5,
