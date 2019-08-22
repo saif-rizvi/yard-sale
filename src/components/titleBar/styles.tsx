@@ -8,8 +8,5 @@ export default (theme: Theme) =>
     },
     subtitle: {
       marginLeft: 4
-    },
-    toolbar: {
-      margin: theme.spacing(4)
     }
   });
