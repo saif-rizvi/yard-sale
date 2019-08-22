@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4aaa607dad5b0a38bdc4ae4a6c472e68",
+    "revision": "1b79b0e369779eed4014c99e26c4c851",
     "url": "/yard-sale/index.html"
   },
   {
-    "revision": "3a26a8b35d99352d98ea",
+    "revision": "eaafa4bed13a8382977c",
     "url": "/yard-sale/static/css/main.5ecd60fb.chunk.css"
   },
   {
-    "revision": "d35552c8194050484d1d",
-    "url": "/yard-sale/static/js/2.70f43ba6.chunk.js"
+    "revision": "921e628960e668814b72",
+    "url": "/yard-sale/static/js/2.9944dc53.chunk.js"
   },
   {
-    "revision": "3a26a8b35d99352d98ea",
-    "url": "/yard-sale/static/js/main.a5e69b3d.chunk.js"
+    "revision": "eaafa4bed13a8382977c",
+    "url": "/yard-sale/static/js/main.3806dcb9.chunk.js"
   },
   {
     "revision": "dce9319d465932b7a01b",
