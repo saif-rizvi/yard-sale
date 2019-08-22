@@ -43,7 +43,7 @@
 		},
 		{
 			"id": 4,
-			"name": "worst headphones ever made",
+			"name": "worst headphones ever",
 			"price": 0,
 			"category": "electronics",
 			"rating": 0,
@@ -93,7 +93,7 @@
 		},
 		{
 			"id": 9,
-			"name": "full-frame star wars box set",
+			"name": "full-frame star wars dvds",
 			"price": 6.5,
 			"category": "movies",
 			"rating": 1,
@@ -106,7 +106,7 @@
 			"name": "some bollywood movie",
 			"price": 1.5,
 			"category": "movies",
-			"rating": 5,
+			"rating": 3,
 			"inStock": true,
 			"popularity": 3,
 			"description": "an instant classic. perfect for those afternoons when you have over three hours to kill."

@@ -2,13 +2,14 @@ import { createStyles, Theme } from '@material-ui/core';
 
 export default (theme: Theme) =>
   createStyles({
-    root: {
-      flexGrow: 1,
+    titleBox: {
+      marginTop: 32,
+      display: 'flex',
     },
-    formControl: {
-      minWidth: 120,
+    subtitle: {
+      marginLeft: 4
     },
     toolbar: {
-      margin: '32px 0',
+      margin: theme.spacing(4)
     }
   });
