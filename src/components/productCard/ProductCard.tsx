@@ -15,7 +15,6 @@ import { Flipped } from 'react-flip-toolkit/lib';
 
 type Props = {
   product: Product,
-  image: string
   modalCallback: (id: number) => void
 } & WithStyles<typeof styles>
 
@@ -61,7 +60,7 @@ class ProductCard extends React.Component<Props> {
   };
 
   render = () => {
-    const {classes, product, image} = this.props;
+    const {classes, product} = this.props;
 
     return (
       <Flipped flipId={product.id}>
@@ -73,11 +72,12 @@ class ProductCard extends React.Component<Props> {
             <div className={classes.rolloverWrapper}
                  onMouseEnter={this.mouseOverTween}
                  onMouseLeave={this.mouseLeaveTween}
+                 onClick={this.handleClick}
             >
               <CardMedia
                 className={classes.media}
                 ref={this.setMediaRef}
-                image={image}
+                image={process.env.PUBLIC_URL + product.imageSrc}
               />
             </div>
             <CardContent>
@@ -100,6 +100,11 @@ class ProductCard extends React.Component<Props> {
         </div>
       </Flipped>
     )
+  };
+
+  private handleClick = () => {
+    const {product, modalCallback} = this.props;
+    modalCallback(product.id);
   };
 
   private ratingToStars = (rating: number) => {
