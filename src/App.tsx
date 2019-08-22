@@ -1,8 +1,19 @@
 import React from 'react';
 
-import { Button, Container, FormControl, Grid, InputLabel, MenuItem, Select, WithStyles } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+import { TweenLite } from 'gsap';
+import { KeyboardArrowDown } from '@material-ui/icons';
+import ExpandedProductCard from './components/expandedProductCard/ExpandedProductCard';
+import { Container } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+
 import styles from './styles';
-import withStyles from '@material-ui/core/styles/withStyles';
+import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
 
 import TitleBar from './components/titleBar/TitleBar';
 import ProductGrid from './components/productGrid/ProductGrid';
@@ -17,6 +28,7 @@ type State = {
   categories: Category[];
   categoryFilter: string;
   sortBy: string;
+  selectedProductId: number;
 }
 
 class App extends React.Component<WithStyles<typeof styles>, State> {
@@ -25,16 +37,52 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
     filteredProducts: data.products,
     categories: data.categories,
     categoryFilter: "",
-    sortBy: ""
+    sortBy: "",
+    selectedProductId: 0
+  };
+
+  private pulloverRef: HTMLElement | null = null;
+  private pulloverTitleRef: HTMLElement | null = null;
+  private pulloverSubtitleRef: HTMLElement | null = null;
+  private tween: ReturnType<typeof TweenLite.to> | null = null;
+
+  private setPulloverRef = (element: HTMLElement | null) => {
+    this.pulloverRef = element;
+  };
+
+  private setPulloverTitleRef = (element: HTMLElement) => {
+    this.pulloverTitleRef = element;
+  };
+
+  private setPulloverSubtitleRef = (element: HTMLElement) => {
+    this.pulloverSubtitleRef = element;
   };
 
   render = () => {
     const {classes} = this.props;
-    const {filteredProducts, categories, categoryFilter, sortBy} = this.state;
+    const {filteredProducts, categories, categoryFilter, sortBy, selectedProductId} = this.state;
 
     return (
-      <Container className="container" maxWidth={'xl'}>
-        <div>
+      <div className={classes.page}>
+        <div className={classes.pullover} ref={this.setPulloverRef}>
+          {!selectedProductId &&
+            <Grid direction='column' className={classes.pulloverTitleGrid}>
+              <Typography className={classes.pulloverTitle} variant='h1' ref={this.setPulloverTitleRef}>
+                yard sale.
+              </Typography>
+              <Typography className={classes.pulloverSubtitle} variant='h4' ref={this.setPulloverSubtitleRef}>
+                please. buy my stuff.
+              </Typography>
+            </Grid>
+          }
+          {selectedProductId > 0 &&
+            <div className={classes.pulloverProduct}>
+              <ExpandedProductCard product={filteredProducts.filter(p => p.id === selectedProductId)[0]} />
+            </div>
+          }
+          <KeyboardArrowDown className={classes.downArrow} onClick={this.pullUpPullover} />
+        </div>
+        <Container className={classes.container} maxWidth={'xl'}>
           <TitleBar squished={false} />
           <Grid container className={classes.toolbar} justify="flex-end" alignItems="flex-end">
             <Button onClick={this.handleReset} disabled={!(sortBy || categoryFilter)}>reset</Button>
@@ -73,21 +121,51 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
               </FormControl>
             </div>
           </Grid>
-          <ProductGrid products={filteredProducts} modalCallback={this.openModal}/>
-        </div>
-      </Container>
+          <ProductGrid products={filteredProducts} modalCallback={this.openPullover}/>
+        </Container>
+      </div>
     );
   };
 
-  private openModal = () => {
-    // todo: modal stuff
+  componentDidMount = () => {
+    window.scrollTo({top: 0});
+    this.tween = TweenLite.from(
+      this.pulloverTitleRef, 1.2,
+      {y: 40, autoAlpha: 0}
+    );
+    this.tween = TweenLite.from(
+      this.pulloverSubtitleRef, 1.7,
+      {x: 60, autoAlpha: 0}
+    );
+  };
+
+  private pullUpPullover = () => {
+    this.tween = TweenLite.to(
+      this.pulloverRef, 0.5,
+      {y: window.scrollY - window.screen.height, display: 'none'}
+    );
+  };
+
+  private pullDownPullover = () => {
+    this.tween = TweenLite.fromTo(
+      this.pulloverRef,
+      0.5,
+      {y: window.scrollY - window.screen.height},
+      {y: window.scrollY, display: 'block'}
+    );
+  };
+
+  private openPullover = (productId: number) => {
+    this.setState({selectedProductId: productId});
+    this.pullDownPullover();
   };
 
   private handleFilterChange = (event: React.ChangeEvent<any>) => {
     const {products, sortBy} = this.state;
     this.setState({
       categoryFilter: event.target.value,
-      filteredProducts: this.sortProductsBy(products.filter(product => product.category === event.target.value), sortBy)
+      filteredProducts: this.sortProductsBy(products.filter(product => product.category === event.target.value), sortBy),
+      selectedProductId: 0
     });
   };
 

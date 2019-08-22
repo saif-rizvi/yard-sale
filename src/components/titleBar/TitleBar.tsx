@@ -16,7 +16,7 @@ class TitleBar extends React.Component<Props> {
         <Typography variant="h3">
           yard sale.
         </Typography>
-        <Typography variant="h5" className={classes.subtitle}>
+        <Typography variant="h5">
           please buy my stuff.
         </Typography>
       </Grid>

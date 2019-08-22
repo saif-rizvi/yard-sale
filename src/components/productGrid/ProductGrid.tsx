@@ -5,7 +5,7 @@ import ProductCard from '../productCard/ProductCard';
 
 type Props = {
   products: Product[],
-  modalCallback: (id: number) => void
+  modalCallback: (productId: number) => void
 }
 
 class ProductGrid extends React.Component<Props> {

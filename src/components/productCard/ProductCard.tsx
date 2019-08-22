@@ -15,7 +15,7 @@ import { Flipped } from 'react-flip-toolkit/lib';
 
 type Props = {
   product: Product,
-  modalCallback: (id: number) => void
+  modalCallback: (productId: number) => void
 } & WithStyles<typeof styles>
 
 class ProductCard extends React.Component<Props> {
@@ -63,7 +63,7 @@ class ProductCard extends React.Component<Props> {
     const {classes, product} = this.props;
 
     return (
-      <Flipped flipId={product.id}>
+      <Flipped flipId={product.name}>
         <div className={classes.wrapper}>
           <Card
             className={classes.card}

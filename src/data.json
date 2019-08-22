@@ -19,7 +19,7 @@
 			"inStock": true,
 			"popularity": 37,
 			"description": "immortalize your loved ones in this picture snow globe. whose kids are those? i have no idea, i could never figure out how to open this stupid thing.",
-			"imageSrc": "/images/snowglobe.jpg"
+			"imageSrc": "/images/snowglobe.jpeg"
 		},
 		{
 			"id": 2,
@@ -30,7 +30,7 @@
 			"inStock": true,
 			"popularity": 12,
 			"description": "get rid of that ouchie muscle pain after your workouts. it only hurts a lot.",
-			"imageSrc": "/images/foamroller.jpg"
+			"imageSrc": "/images/foamroller.jpeg"
 		},
 		{
 			"id": 3,
@@ -41,7 +41,7 @@
 			"inStock": true,
 			"popularity": 7,
 			"description": "try brewing with this thing. i dare you.",
-			"imageSrc": "/images/hario.jpg"
+			"imageSrc": "/images/hario.jpeg"
 		},
 		{
 			"id": 4,
@@ -52,7 +52,7 @@
 			"inStock": true,
 			"popularity": 0,
 			"description": "prank your friends in need with these awful, awful headphones. i mean seriously, how do you make headphones that sound worse than am radio? they're soooo bad. please, just take them.",
-			"imageSrc": "/images/snowglobe.jpg"
+			"imageSrc": "/images/headphones.jpeg"
 		},
 		{
 			"id": 5,
@@ -63,7 +63,7 @@
 			"inStock": true,
 			"popularity": 8,
 			"description": "somewhat old, but it takes better portraits than an iphone. (portrait lens not included)",
-			"imageSrc": "/images/snowglobe.jpg"
+			"imageSrc": "/images/canon.jpeg"
 		},
 		{
 			"id": 6,
@@ -74,7 +74,7 @@
 			"inStock": false,
 			"popularity": 19,
 			"description": "could this BE any more of a shirt?",
-			"imageSrc": "/images/snowglobe.jpg"
+			"imageSrc": "/images/friends.jpeg"
 		},
 		{
 			"id": 7,
@@ -85,7 +85,7 @@
 			"inStock": true,
 			"popularity": 1,
 			"description": "i used them for keeping my feet warm. that's it.",
-			"imageSrc": "/images/socks.jpg"
+			"imageSrc": "/images/socks.jpeg"
 		},
 		{
 			"id": 8,
@@ -96,7 +96,7 @@
 			"inStock": true,
 			"popularity": 10,
 			"description": "don't be a meanie and just get this beanie. if you don't buy it, i'll hit you with zucchini.",
-			"imageSrc": "/images/beanie.jpg"
+			"imageSrc": "/images/beanie.jpeg"
 		},
 		{
 			"id": 9,
@@ -107,7 +107,7 @@
 			"inStock": true,
 			"popularity": 14,
 			"description": "bust out your old crt for these movies that'll make you say 'wow i can't believe i paid money for these.'",
-			"imageSrc": "/images/snowglobe.jpg"
+			"imageSrc": "/images/starwars.jpeg"
 		},
 		{
 			"id": 10,
@@ -117,8 +117,8 @@
 			"rating": 3,
 			"inStock": true,
 			"popularity": 3,
-			"description": "an instant classic. perfect for those afternoons when you have over three hours to kill.",
-			"imageSrc": "/images/snowglobe.jpg"
+			"description": "an instant classic. perfect for those afternoons when you have over three hours to kill and many tears to cry.",
+			"imageSrc": "/images/bollywood.jpeg"
 		},
 		{
 			"id": 11,
@@ -129,7 +129,7 @@
 			"inStock": false,
 			"popularity": 10,
 			"description": "add some greenery to your scenery every millennial's favorite plant. maybe this one won't die on you.",
-			"imageSrc": "/images/succulents.jpg"
+			"imageSrc": "/images/succulents.jpeg"
 		},
 		{
 			"id": 12,
@@ -140,7 +140,7 @@
 			"inStock": true,
 			"popularity": 1,
 			"description": "this really took my spaghetti to the next level. there should be some flavor left in the stems. no promises.",
-			"imageSrc": "/images/basil.jpg"
+			"imageSrc": "/images/basil.jpeg"
 		},
 		{
 			"id": 13,
@@ -151,7 +151,7 @@
 			"inStock": true,
 			"popularity": 4,
 			"description": "it's a broom.",
-			"imageSrc": "/images/broom.jpg"
+			"imageSrc": "/images/broom.jpeg"
 		},
 		{
 			"id": 14,
@@ -162,7 +162,7 @@
 			"inStock": true,
 			"popularity": 2,
 			"description": "sometimes it picks things up with the vacuum. sometimes.",
-			"imageSrc": "/images/swiffer.jpg"
+			"imageSrc": "/images/swiffer.jpeg"
 		},
 		{
 			"id": 15,
@@ -173,7 +173,7 @@
 			"inStock": true,
 			"popularity": 6,
 			"description": "brush stuff into it with your hands. doubles as a shovel.",
-			"imageSrc": "/images/snowglobe.jpg"
+			"imageSrc": "/images/snowglobe.jpeg"
 		},
 		{
 			"id": 16,
@@ -184,7 +184,7 @@
 			"inStock": true,
 			"popularity": 6,
 			"description": "it'll dive-bomb harder than my music career!",
-			"imageSrc": "/images/guitar.jpg"
+			"imageSrc": "/images/guitar.jpeg"
 		},
 		{
 			"id": 17,
@@ -195,7 +195,7 @@
 			"inStock": false,
 			"popularity": 9,
 			"description": "if you slappa da bass, then you'll lova this.. bass..",
-			"imageSrc": "/images/bass.jpg"
+			"imageSrc": "/images/bass.jpeg"
 		},
 		{
 			"id": 18,
@@ -206,7 +206,7 @@
 			"inStock": true,
 			"popularity": 11,
 			"description": "you can impress all of your aunties and uncles with this. just start one of the pre-programmed songs and wiggle your fingers over the keys. works every time.",
-			"imageSrc": "/images/piano.jpg"
+			"imageSrc": "/images/piano.jpeg"
 		}
 	]
 }
