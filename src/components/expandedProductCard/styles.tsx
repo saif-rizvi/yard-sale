@@ -26,6 +26,12 @@ export default (theme: Theme) =>
         width: '100%',
       },
     },
+    content: {
+      width: 'inherit',
+      [theme.breakpoints.up('lg')]: {
+        width: '30vw',
+      },
+    },
     upArrow: {
       cursor: 'pointer',
       height: '1.5em',

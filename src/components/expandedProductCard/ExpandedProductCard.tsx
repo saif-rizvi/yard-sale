@@ -29,7 +29,7 @@ class ExpandedProductCard extends React.Component<Props> {
             className={classes.media}
             image={process.env.PUBLIC_URL + product.imageSrc}
           />
-          <CardContent>
+          <CardContent className={classes.content}>
             <Grid container direction="row" justify="space-between" alignItems="center">
               <Typography variant="h6">
                 {product.name}
@@ -54,10 +54,6 @@ class ExpandedProductCard extends React.Component<Props> {
         </Card>
       </div>
     )
-  };
-
-  private handlePulloverClose = () => {
-
   };
 
   private ratingToStars = (rating: number) => {

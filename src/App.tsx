@@ -11,8 +11,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-
 import styles from './styles';
 import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
 
@@ -65,12 +63,6 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
   };
 
   componentDidMount = () => {
-    window.scrollTo({top: 0});
-
-    if (this.pulloverRef) {
-      disableBodyScroll(this.pulloverRef);
-    }
-
     this.tween = TweenLite.from(
       this.pulloverTitleRef, 1.2,
       {y: 40, autoAlpha: 0}
@@ -95,7 +87,7 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
         <div className={classes.pullover} ref={this.setPulloverRef}>
           {!selectedProductId &&
           <>
-            <Grid direction='column' className={classes.pulloverTitleGrid}>
+            <Grid container direction='column' className={classes.pulloverTitleGrid}>
               <Typography variant='h1' ref={this.setPulloverTitleRef}>
                 yard sale.
               </Typography>
@@ -118,7 +110,7 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
           }
         </div>
         <Container className={classes.container} maxWidth={'xl'}>
-          <TitleBar squished={false}/>
+          <TitleBar />
           <Grid container className={classes.toolbar} justify="flex-end" alignItems="flex-end">
             <Button onClick={this.handleReset} disabled={!(sortBy || categoryFilter)}>reset</Button>
             <div>
@@ -163,9 +155,6 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
   };
 
   private pullUpPullover = () => {
-    if (this.pulloverRef) {
-      enableBodyScroll(this.pulloverRef);
-    }
     this.tween = TweenLite.to(
       this.pulloverRef, 0.5,
       {y: window.scrollY - window.screen.height, display: 'none'}
@@ -173,10 +162,6 @@ class App extends React.Component<WithStyles<typeof styles>, State> {
   };
 
   private pullDownPullover = () => {
-    if (this.pulloverRef) {
-      disableBodyScroll(this.pulloverRef);
-    }
-
     this.tween = TweenLite.fromTo(
       this.pulloverRef,
       0.5,

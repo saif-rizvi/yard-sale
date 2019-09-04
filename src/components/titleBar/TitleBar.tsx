@@ -4,11 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import styles from './styles';
 
-type Props = {
-  squished: boolean
-} & WithStyles<typeof styles>
-
-class TitleBar extends React.Component<Props> {
+class TitleBar extends React.Component<WithStyles<typeof styles>> {
   render = () => {
     const { classes } = this.props;
     return (
@@ -16,7 +12,7 @@ class TitleBar extends React.Component<Props> {
         <Typography variant="h3">
           yard sale.
         </Typography>
-        <Typography variant="h5">
+        <Typography variant="h6">
           please buy my stuff.
         </Typography>
       </Grid>
